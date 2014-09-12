@@ -163,9 +163,9 @@ function snipe(id) {
     // Anticipate enemy movement to snipe effectively
     // predict based on current framerate
     // and eta of projectile
-    var dp = dh * shellSpeed;
-    var px = enemy.position.x + ((enemy.velocity.x + (robot.maxAcceleration * (dt + dp))) * ngx) + 20 * ngx;
-    var py = enemy.position.y + ((enemy.velocity.y + (robot.maxAcceleration * (dt + dp))) * ngy) + 20 * ngy;
+    var dp = dh / shellSpeed;
+    var px = enemy.position.x + ((enemy.velocity.x + (robot.maxAcceleration * (dt + dp))) * ngx);
+    var py = enemy.position.y + ((enemy.velocity.y + (robot.maxAcceleration * (dt + dp))) * ngy);
 
     // If I have reloaded, fire at the enemy.
     if (robot.timeSinceLastShot >= robot.rearmDuration) {
